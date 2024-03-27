@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCH</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        body{
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+        }
+        #container{
+            width: 90vw;
+            height: 80vh;
+            display: flex;
+            background-color: rgb(255, 255, 255);
+            width: 50vw;
+            height: 70vh;
+            margin-top: 2%;
+        }
+
+        #container {
+            
+            background-color: rgba(172, 189, 239, 0.259);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-size: 60vh;
+        }
+        footer{
+            border-radius: 30%;
+            box-shadow:  20px 20px rgb(155, 145, 145);
+            color: rgb(0, 0, 0);
+            width: 80vw;
+            height: 10vh;
+            background-color: rgba(161, 161, 161, 0.521);
+            font-size: 3vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #resp{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            font-size: 1vw;
+        }
+        #resposta{
+            margin-left: 50px;
+            width: 1vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #resposta:hover{
+            background-color: rgba(30, 250, 33, 0.396);
+        }
+    </style>
+</head>
+<body>
+    <div id="resp">
+        <div id="resposta" class="resposta1">1</div>
+        <div id="resposta" class="resposta2">2</div>
+        <div id="resposta" class="resposta3">3</div>
+        <div id="resposta" class="resposta4">4</div>
+        <div id="resposta" class="resposta5">5</div>
+        <div id="resposta" class="resposta6">6</div>
+        <div id="resposta" class="resposta7">7</div>
+        <div id="resposta" class="resposta8">8</div>
+        <div id="resposta" class="resposta9">9</div>
+        <div id="resposta" class="resposta10">10</div>
+        <div id="resposta" class="resposta11">11</div>
+        <div id="resposta" class="resposta12">12</div>
+        <div id="resposta" class="resposta13">13</div>
+        <div id="resposta" class="resposta14">14</div>
+        <div id="resposta" class="resposta15">15</div>
+        <div id="resposta" class="resposta16">16</div>
+        <div id="resposta" class="resposta17">17</div>
+        <div id="resposta" class="resposta18">18</div>
+        <div id="resposta" class="resposta19">19</div>
+        <div id="resposta" class="resposta20">20</div>
+        <div id="resposta" class="resposta21">21</div>
+        <div id="resposta" class="resposta22">22</div>
+        <div id="resposta" class="resposta23">23</div>
+        <div id="resposta" class="resposta24">24</div>
+    </div>
+    <div id="container">
+
+    </div>
+    <footer id="control">
+        <span id="qst"></span>
+ 
+    </footer>
+
+        <script>
+            var certo = false;
+            var vira = false;
+            var inicio = true;
+            var prox = false;
+            var pontos = 0;
+            const resposta1 = document.querySelector(".resposta1");
+            const resposta2 = document.querySelector(".resposta2");
+            const resposta3 = document.querySelector(".resposta3");
+            const resposta4 = document.querySelector(".resposta4");
+            const resposta5 = document.querySelector(".resposta5");
+            const resposta6 = document.querySelector(".resposta6");
+            const resposta7 = document.querySelector(".resposta7");
+            const resposta8 = document.querySelector(".resposta8");
+            const resposta9 = document.querySelector(".resposta9");
+            const resposta10 = document.querySelector(".resposta10");
+            const resposta11 = document.querySelector(".resposta11");
+            const resposta12 = document.querySelector(".resposta12");
+            const resposta13 = document.querySelector(".resposta13");
+            const resposta14 = document.querySelector(".resposta14");
+            const resposta15 = document.querySelector(".resposta15");
+            const resposta16 = document.querySelector(".resposta16");
+            const resposta17 = document.querySelector(".resposta17");
+            const resposta18 = document.querySelector(".resposta18");
+            const resposta19 = document.querySelector(".resposta19");
+            const resposta20 = document.querySelector(".resposta20");
+            const resposta21 = document.querySelector(".resposta21");
+            const resposta22 = document.querySelector(".resposta22");
+            const resposta23 = document.querySelector(".resposta23");
+            const resposta24 = document.querySelector(".resposta24");
+            const qst = document.querySelector("#control");
+            const container =  document.querySelector("#container");
+            const imagens = ['./path/img/back.jpg','./path/img/qst1.png','./path/img/qst2.png','./path/img/qst3.png',
+                             './path/img/qst4.png','./path/img/qst5.png','./path/img/qst6.png','./path/img/qst7.png',
+                             './path/img/qst8.png','./path/img/qst9.png','./path/img/qst10.png','./path/img/qst11.png',
+                             './path/img/qst12.png','./path/img/qst13.png','./path/img/qst14.png','./path/img/qst15.png',
+                             './path/img/qst16.png','./path/img/qst17.png','./path/img/qst18.png','./path/img/qst19.png',
+                             './path/img/qst20.png','./path/img/qst21.png','./path/img/qst22.png','./path/img/qst23.png',
+                             './path/img/qst24.png','./path/img/qst25.png','./path/img/qst26.png','./path/img/qst27.png',
+                             './path/img/qst28.png','./path/img/qst29.png','./path/img/qst30.png','./path/img/start.png',
+                             './path/img/ref.jpg','./path/img/errou.jpg','./path/img/back-qst.png'
+                            ];
+            if(inicio){
+                container.style.backgroundImage="url("+`${imagens[31]}`+")";
+                container.addEventListener("click",()=>{
+                       inicio = false;  
+                container.style.backgroundImage="url("+`${imagens[0]}`+")";
+                jogo("0");
+                })
+            }
+            
+            qst.addEventListener("click",()=>{
+                if(pontos == 0){
+                    pontos ++;
+                    jogo(pontos);
+                }else{
+                    jogo(pontos); 
+                    vira =!vira;         
+                }
+                if(!vira){
+                    container.style.backgroundImage="url("+`${imagens[34]}`+")";
+                }else{
+                  console.log("virada")
+                  if(certo){
+                    pontos++;
+                    jogo(pontos);
+                  }
+                }
+                regra();
+            });
+            const questoes ={
+                "qst0":"marque a opção correta! Clique aqui para continuar.",
+                "qst1":"Cartilago Thyroidea",
+                "qst2":"A. Carotis Communis Sinistra",
+                "qst3":"A. Carotis Communis Dextra",
+                "qst4":"Cartilago Cricoidea",
+                "qst5":"Trachea",
+                "qst6":"M. Scalenus Anterior",
+                "qst7":"M. Scalenus Medius",
+                "qst8":"Truncus Thyrocervicalis",
+                "qst9":"A. Vertebral Dextra",
+                "qst10":"A. Vertebral Sinistra",
+                "qst11":"A. Subclavia Dextra",
+                "qst12":"A. Subclavia Sinistra",
+                "qst13":"A. Thoracica Interna",
+                "qst14":"Oesophagus",
+                "qst15":"Costela 1 Dextra",
+                "qst16":"Truncus Brachiocephalicus",
+                "qst17":"Arcus Aortae",
+                "qst18":"Aorta Ascendens",
+                "qst19":"R. Bronchialis",
+                "qst20":"Bronchus Principalis Sinister",
+                "qst21":"Bronchus Principalis Dexter",
+                "qst22":"R. Oesophagealis",
+                "qst23":"Aorta Thoracica",
+                "qst24":"Diaphragma",
+                "qst25":"A. Phrenica Inferior",
+                "qst26":"Truncus Coeliacus",
+                "qst27":"A. Lumbalis",
+                "qst28":"Hiatus Aorticus",
+                "qst29":"Aorta Abdominalis"
+            }
+
+            function jogo(aux){
+                qst.innerHTML =questoes["qst"+ aux];
+                console.log(pontos)
+            }
+            function regra(){
+
+                resposta1.addEventListener("click",()=>{  });
+                resposta2.addEventListener("click",()=>{});
+                resposta3.addEventListener("click",()=>{});
+                resposta4.addEventListener("click",()=>{});
+                resposta5.addEventListener("click",()=>{});
+                resposta6.addEventListener("click",()=>{});
+                resposta7.addEventListener("click",()=>{
+                    if(pontos == 1){
+                    container.style.backgroundImage="url("+`${imagens[2]}`+")";
+                    jogo("2")
+                    }else{
+                    container.style.backgroundImage="url("+`${imagens[31]}`+")";
+                    }});
+
+                resposta8.addEventListener("click",()=>{});
+                resposta9.addEventListener("click",()=>{});
+                resposta10.addEventListener("click",()=>{});
+                resposta11.addEventListener("click",()=>{});
+                resposta12.addEventListener("click",()=>{});
+                resposta13.addEventListener("click",()=>{});
+                resposta14.addEventListener("click",()=>{});
+                resposta15.addEventListener("click",()=>{});
+                resposta16.addEventListener("click",()=>{});
+                resposta17.addEventListener("click",()=>{});
+                resposta18.addEventListener("click",()=>{});
+                resposta19.addEventListener("click",()=>{});
+                resposta20.addEventListener("click",()=>{});
+                resposta21.addEventListener("click",()=>{});
+                resposta22.addEventListener("click",()=>{});
+                resposta23.addEventListener("click",()=>{});
+                resposta24.addEventListener("click",()=>{});
+
+            }
+
+        </script>
+</body>
+</html>
